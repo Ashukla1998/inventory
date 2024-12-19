@@ -1,0 +1,56 @@
+<%= form_with(model: @product, local: true) do |form| %>
+  <div class="container mt-5">
+    <!-- Row to center the form horizontally -->
+    <div class="row justify-content-center">
+      <!-- Column that will adjust based on screen size -->
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+
+        <!-- Card for form wrapper with shadow and rounded corners -->
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white text-center">
+            <h4>Create Product</h4>
+          </div>
+
+          <div class="card-body">
+            <!-- Product Name Field -->
+            <div class="mb-4">
+              <%= form.label :name, class: "form-label" %>
+              <%= form.text_field :name, class: "form-control form-control-lg", placeholder: "Enter Product Name" %>
+            </div>
+
+            <!-- Product Description Field -->
+            <div class="mb-4">
+              <%= form.label :description, class: "form-label" %>
+              <%= form.text_area :description, class: "form-control form-control-lg", rows: 4, placeholder: "Enter Product Description" %>
+            </div>
+
+            <!-- Total Box Field -->
+            <div class="mb-4">
+              <%= form.label :total_box, class: "form-label" %>
+              <div class="input-group">
+                <%= form.number_field :total_box, class: "form-control", placeholder: "Enter Total Boxes" %>
+                <span class="input-group-text">Boxes</span>
+              </div>
+            </div>
+
+            <!-- Items per Box Field -->
+            <div class="mb-4">
+              <%= form.label :item_in_box, class: "form-label" %>
+              <div class="input-group">
+                <%= form.number_field :item_in_box, class: "form-control", placeholder: "Enter Items per Box" %>
+                <span class="input-group-text">Items</span>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mb-3 text-center">
+              <%= form.submit "Submit", class: "btn btn-success btn-lg w-100" %>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<% end %>

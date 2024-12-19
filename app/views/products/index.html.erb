@@ -1,0 +1,34 @@
+<% content_for :title, "Products" %>
+
+<!-- Displaying notice message -->
+<% if notice %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
+
+<h1 class="text-center my-4">Products</h1>
+
+<div id="products" class="container">
+  <div class="row">
+    <!-- Loop through each product and render it using a card -->
+    <% @products.each do |product| %>
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= product.name %></h5>
+            <p class="card-text"><strong>Description:</strong> <%= product.description %></p>
+            <p class="card-text"><strong>Total Boxes:</strong> <%= product.total_box %></p>
+            <p class="card-text"><strong>Items per Box:</strong> <%= product.item_in_box %></p>
+            <p class="card-text"><strong>Total Items:</strong> <%= product.total_item %></p>
+            <%= link_to "Show this product", product, class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="text-center mt-4">
+  <%= link_to "New Product", new_product_path, class: "btn btn-success btn-lg" %>
+</div>

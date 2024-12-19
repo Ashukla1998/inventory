@@ -1,0 +1,32 @@
+<div id="<%= dom_id(product) %>" class="card mb-3 shadow-sm">
+  <div class="card-header bg-primary text-white">
+    <h5 class="card-title mb-0">Product Details</h5>
+  </div>
+
+  <div class="card-body">
+    <p>
+      <strong class="text-muted">Name:</strong>
+      <span><%= product.name %></span>
+    </p>
+
+    <p>
+      <strong class="text-muted">Description:</strong>
+      <span><%= product.description %></span>
+    </p>
+
+    <p>
+      <strong class="text-muted">Total Boxes:</strong>
+      <span><%= product.total_box %></span>
+    </p>
+
+    <p>
+      <strong class="text-muted">Items per Box:</strong>
+      <span><%= product.item_in_box %></span>
+    </p>
+
+    <p>
+      <strong class="text-muted">Total Items:</strong>
+      <span><%= product.total_item %></span>
+    </p>
+  </div>
+</div>
