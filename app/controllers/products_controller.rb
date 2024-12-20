@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
   end
-
+  #testing commit
   # GET /products/1/edit
   def edit
   end
